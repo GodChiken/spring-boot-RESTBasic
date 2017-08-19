@@ -33,7 +33,7 @@ public class DepartmentGroup{
     //@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "departmentGroup")
     //List<Department> departmentsOfGroup;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_group_idx", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     @JsonIgnore
     List<Department> departmentsOfGroup;

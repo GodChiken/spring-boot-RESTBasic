@@ -39,4 +39,15 @@ public class IndexRestTest {
         Assert.assertEquals("부서가 포함되어있는 그룹", "사업부문", department.getDepartmentGroup().getDepartmentGroupName()); //fetchType 변경으로 테스트 통과
     }
 
+    @Test
+    public void createDepartmentTest(){
+        departmentRestService.insertDepartment("전설의팀", 1);
+
+        Department department = departmentRestService.getDepartment(9);
+        Assert.assertNotNull(department);
+        Assert.assertEquals("부서명", "전설의팀", department.getDepartmentName());
+        Assert.assertEquals("부서가 포함되어있는 그룹", "사업부문", department.getDepartmentGroup().getDepartmentGroupName());
+
+    }
+
 }

@@ -29,7 +29,7 @@ public class Department{
     @Column(name = "department_name")
     private String departmentName;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department_group_idx", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     @JsonIgnore
     private DepartmentGroup departmentGroup;

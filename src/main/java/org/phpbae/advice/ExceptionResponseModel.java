@@ -13,7 +13,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class ExceptionResponseModel {
-
     private String msg;
-
+    private int statusCode;
 }

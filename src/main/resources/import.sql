@@ -17,5 +17,5 @@ INSERT INTO department(department_name, department_group_idx) VALUES ('개발1�
 INSERT INTO department(department_name, department_group_idx) VALUES ('개발2팀', 2);
 INSERT INTO department(department_name, department_group_idx) VALUES ('해외영업팀', 3);
 INSERT INTO department(department_name, department_group_idx) VALUES ('국내영업팀', 3);
-
+INSERT INTO department(department_name, department_group_idx) VALUES ('기타팀', 4);
 

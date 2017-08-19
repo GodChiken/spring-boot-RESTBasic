@@ -3,12 +3,15 @@ package org.phpbae;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.phpbae.controller.rest.IndexRestController;
 import org.phpbae.domain.Department;
 import org.phpbae.service.DepartmentGroupRestService;
 import org.phpbae.service.DepartmentRestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
 
 /**
  * Created by Administrator on 2017-08-12.

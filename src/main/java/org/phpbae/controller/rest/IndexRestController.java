@@ -27,13 +27,13 @@ public class IndexRestController {
     }
 
     @GetMapping(value = "/departments/{departmentIdx}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity getDepartments(@PathVariable(value = "departmentIdx") int departmentIdx) {
+    public ResponseEntity getDepartmentOne(@PathVariable(value = "departmentIdx") int departmentIdx) {
         return new ResponseEntity(departmentRestService.getDepartment(departmentIdx), HttpStatus.OK);
     }
 
-    @PutMapping(value = "/departments/insert_department", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity putDepartment() {
-        return null;
+    @PutMapping(value = "/departments/insert_department/{departmentName}/{departmentGroupIdx}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity putDepartment(@PathVariable(value = "departmentName") String departmentName, @PathVariable(value = "departmentGroupIdx") int departmentGroupIdx) {
+        return new ResponseEntity(departmentRestService.insertDepartment(departmentName, departmentGroupIdx), HttpStatus.OK);
     }
 
     @PostMapping(value = "/departments/update_department/{departmentIdx}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

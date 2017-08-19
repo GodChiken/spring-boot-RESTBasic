@@ -35,4 +35,9 @@ public class Department{
     private DepartmentGroup departmentGroup;
 
 
+    public Department(String name, DepartmentGroup departmentGroup){
+        this.departmentName = name;
+        this.departmentGroup = departmentGroup;
+    }
+
 }

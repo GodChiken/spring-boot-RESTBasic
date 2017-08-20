@@ -52,15 +52,15 @@ public class IndexRestMockTest {
 
     @Test
     public void getDepartmentTest() throws Exception {
-        //given(this.departmentRestService.getDepartment(1)).willCallRealMethod(); // getDepartment 메소드에 인자값 1이 입력될 경우 .willReturn(getDepartment); // getDepartment 객체를 리턴한다.
-        //when(this.departmentRestService.getDepartment(1)).thenReturn(department);
+        //서비스 구현체가 없어도 Test 가능. request, response 결과가 정상적인지 확인.
+        given(this.departmentRestService.getDepartment(1)).willReturn(new Department(1,"인사팀", null)); // getDepartment 메소드에 인자값 1이 입력될 경우 .willReturn(getDepartment); // getDepartment 객체를 리턴한다.
         this.mockMvc.perform(get("/api/departments/{departmentIdx}", 1).characterEncoding("utf8")
         )
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(redirectedUrl(null))
-                .andExpect(jsonPath("$.department_name").isNotEmpty())
-                .andExpect(jsonPath("$.department_name").value("인사팀"))
+                .andExpect(jsonPath("$.departmentName").isNotEmpty())
+                .andExpect(jsonPath("$.departmentName").value("인사팀"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
     }
 

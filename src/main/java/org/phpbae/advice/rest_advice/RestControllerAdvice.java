@@ -16,10 +16,10 @@ public class RestControllerAdvice {
     public ExceptionResponseModel handleNotFoundException(Exception exception) {
         exception.printStackTrace();
         if (exception instanceof RestCustomException) {
-            return new ExceptionResponseModel(exception.getMessage(), HttpStatus.UNSUPPORTED_MEDIA_TYPE.value()); //번호는 그냥 Test
+            return new ExceptionResponseModel(exception.getMessage(), 900);
         }
         if (exception instanceof RestFiledException) {
-            return new ExceptionResponseModel(exception.getMessage(), HttpStatus.BAD_REQUEST.value());
+            return new ExceptionResponseModel(exception.getMessage(), 901);
         }
         return null;
     }
